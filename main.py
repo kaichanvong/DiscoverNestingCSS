@@ -28,7 +28,7 @@ class NestingCascadingStyleSheets:
         nesting6[1] += (parenthesis_mix + properties_plus_comments)
         nesting6[1] += (parenthesis_mix + parenthesis_mix)
         css_example = self.css_examples[0]
-        print(nesting6[1].parseString(css_example))
+        return nesting6[1].parseString(css_example)
 
 
 if __name__ == '__main__':
