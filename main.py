@@ -37,11 +37,7 @@ class NestingCascadingStyleSheets:
         parenthesis_switch = PARENTHESIS[0] + PARENTHESIS[1]
         parenthesis_mix = Word(parenthesis_switch)
         characters = ':' + ',' + ' ' + '!' + '-' + ';'
-        #  digits = (0..9).to_a
-        #  digits = str.encode(numpy.arange(9))
         digits = ''.join([str(n) for n in numpy.arange(9)])
-        print(digits)
-        digits = '0123456789'
         additional = comments + digits + "\n"
         properties_plus_comments = Word(alphas + characters + additional)
         nesting6 = [[], [], [], [], [], []]
