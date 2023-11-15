@@ -19,7 +19,7 @@ class NestingCascadingStyleSheets:
         comments = OPEN_COMMENT + CLOSE_COMMENT
         parenthesis_switch = PARENTHESIS[0] + PARENTHESIS[1]
         parenthesis_mix = Word(parenthesis_switch)
-        characters = ':' + ',' + ' ' + '!' + '-' + ';'
+        characters = ':' + ',' + ' ' + '!' + '-' + ';' + '"'
         digits = ''.join([str(n) for n in numpy.arange(9)])
         additional = comments + digits + "\n"
         properties_plus_comments = Word(alphas + characters + additional)
@@ -37,10 +37,11 @@ if __name__ == '__main__':
               h1 {
                 /* this is now valid! */
                 font-weight: 200;
-                font-family: helvetica;
-                display: block;
-                min-width: 200px;
-                min-height: 1em;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+                font-size: 21px; 
+                font-style: normal; 
+                font-variant: normal; 
+                font-weight: 700
               }
             }""", """
             /* the same as */
