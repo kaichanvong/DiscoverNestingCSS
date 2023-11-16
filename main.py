@@ -9,7 +9,10 @@ CLOSE_COMMENT = '*' + '/'
 class NestingCascadingStyleSheets:
     def __init__(self, styles):
         self.css_examples = styles
-        self.nesting_cascading_style_sheets()
+        self.css_array = self.nesting_cascading_style_sheets()
+
+    def return_header_tags(self):
+        return self.css_array[0], self.css_array[2]
 
     def parenthesis_objects(self):
         pass
@@ -28,7 +31,8 @@ class NestingCascadingStyleSheets:
         nesting6[1] += (parenthesis_mix + properties_plus_comments)
         nesting6[1] += (parenthesis_mix + parenthesis_mix)
         css_example = self.css_examples[0]
-        return nesting6[1].parseString(css_example)
+        css_arr = nesting6[1].parseString(css_example)
+        return css_arr
 
 
 if __name__ == '__main__':
@@ -37,7 +41,7 @@ if __name__ == '__main__':
               h1 {
                 /* this is now valid! */
                 font-weight: 200;
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+                font-family: "Helvetica Neue Meh", Helvetica, Arial, sans-serif; 
                 font-size: 21px; 
                 font-style: normal; 
                 font-variant: normal; 
@@ -53,5 +57,6 @@ if __name__ == '__main__':
             """]  # discovered @ link
     #  link: https://developer.chrome.com/blog/css-nesting-relaxed-syntax-update
     # anchor name /#nesting-element-tag-names
-    NestingCascadingStyleSheets(css_examples)
+    css_arr = NestingCascadingStyleSheets(css_examples)
+    css_arr.return_header_tags()
 
